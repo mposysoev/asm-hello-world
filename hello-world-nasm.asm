@@ -1,15 +1,18 @@
-BITS 64
-%define SYS_exit 60
-%define SYS_write 1
-%define STDOUT 1
- global _start
- _start:
-    mov rax, SYS_write
-    mov rax, SYS_exit
-    mov rdi, 0
+bits 64
+
+global _start
+
+section .text
+_start:
+    mov rax, 1              ; sys_write
+    mov rdi, 1              ; stdout
+    mov rsi, msg
+    mov rdx, 13
     syscall
 
-    mov rax, SYS_exit
-    mov rdi,0
+    mov rax, 60             ; sys_exit
+    xor rdi, rdi
+    syscall
+
 section .data
-hello: db "Hello, World", 10
+msg: db "Hello, world", 10

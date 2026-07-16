@@ -1,8 +1,10 @@
 # Assembly Hello World
 
-Examples of "Hello, world" programs in Assembly for Linux
+Short Linux x86-64 “Hello, world” examples (syscalls, no libc):
 
-1. Nasm
-2. Fasm 
-
-wish *Gas*
+| File                     | Assembler         |
+| ------------------------ | ----------------- |
+| `hello-world-nasm.asm`   | NASM              |
+| `hello-world-fasm.asm`   | FASM              |
+| `hello-world-fasm-2.asm` | FASM (alt. setup) |
+| `hello-world-gas.s`      | GAS (GNU as)      |
